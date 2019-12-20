@@ -4,7 +4,7 @@
 
 Front end client (React) for a Coffee Recipe Tracker application. This repo contains the code for all of the user facing fuctionality for the web client.
 
-The application solves the problem of keeping track of the different ways someone has made coffee. Home coffee making enthusiasts have many factors to keep track of when brewing coffee. This application allows someone to keep track of thse various factors and rate the quality of the resulting cup as well as make notes. This will help them to make better decisions in the future about how to brew coffee for the best tasting results.
+The application solves the problem of keeping track of the different ways someone has made coffee. Home coffee making enthusiasts have many factors to keep track of when brewing coffee. This application allows someone to keep track of those various factors and rate the quality of the resulting cup as well as make notes. This will help them to make better decisions in the future about how to brew coffee for the best tasting results.
 
 This project is used as a portfolio piece for my work as a Software Developer. If you are interested in discussing this further with me please feel free to reach out on [Twitter](https://twitter.com/daveskull81) or on my [website](https://www.daveinden.com).
 
