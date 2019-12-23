@@ -1,10 +1,9 @@
 import React from 'react';
-import Home from './components/Home';
 
 function App() {
   return (
     <div>
-      <Home />
+      <h2>All Methods</h2>
     </div>
   );
 }
