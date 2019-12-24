@@ -3,8 +3,8 @@ import React from 'react';
 function App() {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Cards linking to Coffess, Methods, and Recpies.</p>
+      <h1>Coffee Recipe Tracker</h1>
+      <p>Marketing type page about the application.</p>
     </div>
   );
 }
