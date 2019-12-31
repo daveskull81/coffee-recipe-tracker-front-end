@@ -9,9 +9,12 @@ The application solves the problem of keeping track of the different ways someon
 This project is used as a portfolio piece for my work as a Software Developer. If you are interested in discussing this further with me please feel free to reach out on [Twitter](https://twitter.com/daveskull81) or on my [website](https://www.daveinden.com).
 
 ### Demonstrates use of the following:  
-* TODO
-* TODO
-* TODO
+
+* React component development
+* Routing with React Router
+* Layout and styling with Material UI
+* Frontend testing with React Testing Library
+* Connecting a frontend client to a custom backend database and API
 
 ## Installation
 
