@@ -1,12 +1,12 @@
 import React from 'react';
 
-function App() {
+function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <p>Cards linking to Coffess, Methods, and Recpies.</p>
+      <p>Cards linking to Coffees, Methods, and Recipes.</p>
     </div>
   );
 }
 
-export default App;
+export default Home;
