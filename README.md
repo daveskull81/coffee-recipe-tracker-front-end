@@ -29,6 +29,12 @@ From the root directory in your command line run `npm install` to install depend
 The local server can be started by running `npm start` once dependencies are installed. It should launch in your browser at `localhost:3000`
 Note, this application is deisgned to run against a specific [backend](https://github.com/daveskull81/coffee-recipe-tracker-api). You'll want to install that repo and run that along side this to see the full application.
 
+Once you have that running you will need to set an environment variable with the port your backend instance is running on.  
+Example:  
+```
+REACT_APP_BACKEND_BASE_URL=http://localhost:5000/api
+```
+
 ## Testing
 
 Tests are implemented with React Testing Library. To start tests run `npm test` from the root directory in your command line.
