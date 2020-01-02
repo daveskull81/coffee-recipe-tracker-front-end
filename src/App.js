@@ -5,6 +5,7 @@ import MainPage from './components/Layout/MainPage';
 import Home from './components/Layout/Home';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import PrivateRoute from './components/Auth/PrivateRoute';
 
 function App() {
 
@@ -18,9 +19,7 @@ function App() {
           <Route path='/register'>
             <Register />
           </Route>
-          <Route path='/home'>
-            <Home />
-          </Route>
+          <PrivateRoute path='/home' component={Home} />
           <Route path='/'>
             <MainPage />
           </Route>
