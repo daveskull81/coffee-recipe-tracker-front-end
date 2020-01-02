@@ -35,6 +35,11 @@ Example:
 REACT_APP_BACKEND_BASE_URL=http://localhost:5000/api
 ```
 
+Additional environment variables to set are the following:  
+```
+REACT_APP_COOKIE_NAME //can be set to any string value
+```
+
 ## Testing
 
 Tests are implemented with React Testing Library. To start tests run `npm test` from the root directory in your command line.

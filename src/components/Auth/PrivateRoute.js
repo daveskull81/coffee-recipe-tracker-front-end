@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-    const [ cookies ] = useCookies(['crt-user']);
+    const [ cookies ] = useCookies([process.env.REACT_APP_COOKIE_NAME]);
     return (
         <Route {...rest} render={props => {
                 //cookies is an empty object if no cookies are set
