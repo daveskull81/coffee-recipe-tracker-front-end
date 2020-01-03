@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import { TextField, Button } from '@material-ui/core';
 import apiRequest from '../../utils/apiRequest';
 import { useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
