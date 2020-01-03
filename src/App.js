@@ -16,19 +16,13 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          <Route path='/register'>
-            <Register />
-          </Route>
+          <Route exact path='/' component={MainPage} />
+          <Route path='/login' component ={Login} />
+          <Route path='/register' component={Register} />
           <PrivateRoute path='/home' component={Home} />
           <PrivateRoute path='/coffees' component={Coffees} />
           <PrivateRoute path='/methods' component={Methods} />
           <PrivateRoute path='/recipes' component={Recipes} />
-          <Route path='/'>
-            <MainPage />
-          </Route>
         </Switch>
       </div>
     </Router>
