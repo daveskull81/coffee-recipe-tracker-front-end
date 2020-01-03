@@ -7,7 +7,7 @@ function Home() {
     <div>
       <h1>Home</h1>
       <Grid container spacing={3}>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <Link to='/coffees'>
             <Card>
               <CardContent>
@@ -17,7 +17,7 @@ function Home() {
             </Card>
           </Link>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <Link to='/methods'>
             <Card>
               <CardContent>
@@ -27,7 +27,7 @@ function Home() {
             </Card>
           </Link>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <Link to='/recipes'>
             <Card>
               <CardContent>
