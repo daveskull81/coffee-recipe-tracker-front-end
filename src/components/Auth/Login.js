@@ -45,6 +45,7 @@ function Login() {
           label='Username'
           name='username'
           variant='outlined'
+          margin='normal'
           value={user.username}
           onChange={handleChange}
           helperText={isError ? 'Check username is correct' : ''}
@@ -58,13 +59,20 @@ function Login() {
           type='password'
           name='password'
           variant='outlined'
+          margin='normal'
           value={user.password}
           onChange={handleChange}
           helperText={isError ? 'Check password is correct' : ''}
           error={isError}
         />
       </div>
-      <Button variant='contained' color='primary' type='submit'>Submit</Button>
+      <Button 
+        variant='contained' 
+        color='primary' 
+        type='submit'
+      >
+        Submit
+      </Button>
     </form>
   );
 }
