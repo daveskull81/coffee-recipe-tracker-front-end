@@ -2,7 +2,7 @@
     Coffee Recipe Tracker Front End
 </h1>
 
-*NOTE: THis project is a work in progress and is not yet complete. The code here represents the current state of the project.*
+*NOTE: This project is a work in progress and is not yet complete. The code here represents the current state of the project.*
 
 ---
 
