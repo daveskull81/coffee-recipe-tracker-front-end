@@ -9,6 +9,7 @@ function Login() {
   const history = useHistory();
   const userCookieLabel = process.env.REACT_APP_USER_COOKIE_NAME;
   const [ user, setUser ] = useState({ username: '', password: '' });
+  // eslint-disable-next-line
   const [ cookies, setCookie ] = useCookies([userCookieLabel]);
   const [ isError, setIsError ] = useState(false);
 
@@ -71,7 +72,7 @@ function Login() {
         color='primary' 
         type='submit'
       >
-        Submit
+        Login
       </Button>
     </form>
   );
