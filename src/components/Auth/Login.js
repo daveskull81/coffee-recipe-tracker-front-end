@@ -11,9 +11,13 @@ function Login() {
   const userCookieLabel = process.env.REACT_APP_USER_COOKIE_NAME;
   const [ user, setUser ] = useState({ username: '', password: '' });
   const [ cookies, setCookie ] = useCookies([userCookieLabel]);
+  const [ isError, setIsError ] = useState(false);
 
   const handleChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value })
+    if (isError) {
+      setIsError(false);
+    }
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const onSubmit = e => {
@@ -22,11 +26,16 @@ function Login() {
     apiRequest()
       .post('/auth/login', user)
       .then(res => {
-        console.log(res.data);
         setCookie(userCookieLabel, res.data, { path: '/' });
         history.push('/home');
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          setIsError(true);
+        } else {
+          alert('There was an error logging you in. Please wait and try again.');
+        };
+      });
   };
 
   return (
@@ -39,6 +48,8 @@ function Login() {
           variant='outlined'
           value={user.username}
           onChange={handleChange}
+          helperText={isError ? 'Check username is correct' : ''}
+          error={isError}
         />
       </div>
       <div>
@@ -50,6 +61,8 @@ function Login() {
           variant='outlined'
           value={user.password}
           onChange={handleChange}
+          helperText={isError ? 'Check password is correct' : ''}
+          error={isError}
         />
       </div>
       <Button variant='contained' color='primary' type='submit'>Submit</Button>
