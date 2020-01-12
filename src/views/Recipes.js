@@ -1,6 +1,6 @@
 import React from 'react';
 
-function App() {
+const Recipes = ({ currentUser }) => {
   return (
     <div>
       <h2>All Recipes</h2>
@@ -8,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default Recipes;
