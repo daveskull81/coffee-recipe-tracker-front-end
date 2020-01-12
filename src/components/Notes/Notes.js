@@ -1,6 +1,6 @@
 import React from 'react';
 
-function App() {
+const Notes = () => {
   return (
     <div>
       <h2>All Notes</h2>
@@ -8,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default Notes;

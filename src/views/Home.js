@@ -1,8 +1,8 @@
 import React from 'react';
-import { Grid, Paper, Card, CardContent } from '@material-ui/core';
+import { Grid, Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-function Home() {
+const Home = () => {
   return (
     <div>
       <h1>Home</h1>

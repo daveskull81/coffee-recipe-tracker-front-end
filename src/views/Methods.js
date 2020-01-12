@@ -1,6 +1,6 @@
 import React from 'react';
 
-function App() {
+const Methods = ({ currentUser }) => {
   return (
     <div>
       <h2>All Methods</h2>
@@ -8,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default Methods;
