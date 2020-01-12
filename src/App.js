@@ -10,6 +10,7 @@ import PrivateRoute from './components/Auth/PrivateRoute';
 import Coffees from './views/Coffees';
 import Methods from './views/Methods';
 import Recipes from './views/Recipes';
+import AddCoffee from './forms/AddCoffee';
 
 function App() {
 
@@ -23,9 +24,10 @@ function App() {
               <Route path='/login' component ={Login} />
               <Route path='/register' component={Register} />
               <PrivateRoute path='/home' component={Home} />
-              <PrivateRoute path='/coffees' component={Coffees} />
-              <PrivateRoute path='/methods' component={Methods} />
-              <PrivateRoute path='/recipes' component={Recipes} />
+              <PrivateRoute exact path='/coffees' component={Coffees} />
+              <PrivateRoute exact path='/methods' component={Methods} />
+              <PrivateRoute exact path='/recipes' component={Recipes} />
+              <PrivateRoute path='/coffees/new' component={AddCoffee} />
             </Switch>
         </Router>
       </Container>

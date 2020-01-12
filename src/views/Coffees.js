@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiRequest from '../utils/apiRequest';
 import { Grid, Card, CardContent, CardActions, Button } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 
 const Coffees = ({ currentUser }) => {
 
@@ -33,7 +34,9 @@ const Coffees = ({ currentUser }) => {
         <h2>All Coffees</h2>
         </Grid>
         <Grid item xs={3}>
-          <Button color='primary'>Add New Coffee</Button>
+          <Link to='/coffees/new'>
+            <Button color='primary'>Add New Coffee</Button>
+          </Link>
         </Grid>
       </Grid>
       <Grid container spacing={3}>
@@ -48,7 +51,7 @@ const Coffees = ({ currentUser }) => {
                         <p><strong>Roaster:</strong> {coffee.roaster}</p>
                         <p><strong>Origin:</strong> {coffee.country_of_origin}</p>
                         <p><strong>Region:</strong> {coffee.region}</p>
-                        <p><strong>Processing:</strong> {coffee.processing}</p>
+                        <p><strong>Processing:</strong> {coffee.processing_method}</p>
                         <p><strong>Roast Level:</strong> {coffee.roast_level}</p>
                       </CardContent>
                       <CardActions>
