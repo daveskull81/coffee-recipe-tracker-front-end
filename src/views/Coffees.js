@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import apiRequest from '../utils/apiRequest';
 import { Grid, Card, CardContent, CardActions, Button } from '@material-ui/core'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Coffees = ({ currentUser }) => {
 
   const [coffees, setCoffees ] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     apiRequest(currentUser.token)
@@ -13,10 +14,10 @@ const Coffees = ({ currentUser }) => {
       .then(res => {
         setCoffees(res.data)
       })
-      .catch(err => {
-        console.log(err);
+      .catch(() => {
+        history.push('/login');
       });
-  }, [setCoffees, currentUser.token, currentUser.id]);
+  }, [setCoffees, currentUser.token, currentUser.id, history]);
 
   if (!coffees) {
     return (
@@ -44,7 +45,7 @@ const Coffees = ({ currentUser }) => {
           coffees.length === 0 ?
           <h3>Add coffees to get started.</h3>
           : coffees.map(coffee => {
-            return <Grid item xs={12}>
+            return <Grid item xs={12} key={coffee.id}>
                     <Card>
                       <CardContent>
                         <p><strong>Name:</strong> {coffee.name}</p>
