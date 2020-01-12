@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Card, CardContent } from '@material-ui/core';
+import { Grid, Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
