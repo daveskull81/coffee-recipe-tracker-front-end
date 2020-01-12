@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, CssBaseline } from '@material-ui/core';
 
-import MainPage from './components/Layout/MainPage';
-import Home from './components/Layout/Home';
-import Login from './components/Auth/Login';
-import Register from './components/Auth/Register';
+import MainPage from './views/MainPage';
+import Home from './views/Home';
+import Login from './views/Login';
+import Register from './views/Register';
 import PrivateRoute from './components/Auth/PrivateRoute';
-import Coffees from './components/Coffees/Coffees';
-import Methods from './components/Methods/Methods';
-import Recipes from './components/Recipes/Recipes';
+import Coffees from './views/Coffees';
+import Methods from './views/Methods';
+import Recipes from './views/Recipes';
 
 function App() {
 
