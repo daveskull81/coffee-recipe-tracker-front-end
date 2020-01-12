@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@material-ui/core';
-import apiRequest from '../../utils/apiRequest';
+import apiRequest from '../utils/apiRequest';
 import { useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
 
-function Login() {
+function Register() {
 
   const history = useHistory();
   const userCookieLabel = process.env.REACT_APP_USER_COOKIE_NAME;
   const [ user, setUser ] = useState({ username: '', password: '' });
   // eslint-disable-next-line
   const [ cookies, setCookie ] = useCookies([userCookieLabel]);
-  const [ isError, setIsError ] = useState(false);
+  const [ isError , setIsError ] = useState(false);
 
   const handleChange = e => {
     if (isError) {
@@ -24,16 +24,16 @@ function Login() {
     e.preventDefault();
 
     apiRequest()
-      .post('/auth/login', user)
+      .post('/auth/register', user)
       .then(res => {
         setCookie(userCookieLabel, res.data, { path: '/' });
         history.push('/home');
       })
       .catch(err => {
-        if (err.response.status === 401) {
+        if (err.response.data.error.includes('UNIQUE')) {
           setIsError(true);
         } else {
-          alert('There was an error logging you in. Please wait and try again.');
+          alert('There was an error registering your account. Please wait and try again.');
         };
       });
   };
@@ -49,8 +49,8 @@ function Login() {
           margin='normal'
           value={user.username}
           onChange={handleChange}
-          helperText={isError ? 'Check username is correct' : ''}
           error={isError}
+          helperText={isError ? 'That username is taken. Choose another username.' : ''}
         />
       </div>
       <div>
@@ -63,8 +63,6 @@ function Login() {
           margin='normal'
           value={user.password}
           onChange={handleChange}
-          helperText={isError ? 'Check password is correct' : ''}
-          error={isError}
         />
       </div>
       <Button 
@@ -72,10 +70,10 @@ function Login() {
         color='primary' 
         type='submit'
       >
-        Login
+        Register
       </Button>
     </form>
   );
 }
 
-export default Login;
+export default Register;
