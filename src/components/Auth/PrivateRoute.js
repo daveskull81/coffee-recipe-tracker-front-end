@@ -17,7 +17,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
                 if (Object.keys(cookies).length === 0 && cookies.constructor === Object) {
                     return <Redirect to='/login' />
                 } else {
-                    return <Component {...props} />
+                    return <Component {...props} currentUser={cookies[process.env.REACT_APP_USER_COOKIE_NAME]}/>
                 }
             }
         } />
