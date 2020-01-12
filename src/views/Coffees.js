@@ -68,7 +68,7 @@ const Coffees = ({ currentUser }) => {
                         <p><strong>Roast Level:</strong> {coffee.roast_level}</p>
                       </CardContent>
                       <CardActions>
-                        <Button>Edit</Button>
+                        <Link to={`/coffees/edit/${coffee.id}`}><Button>Edit</Button></Link>
                         <Button color="secondary" onClick={() => deleteHandler(coffee.id)}>Delete</Button>
                       </CardActions>
                     </Card>
