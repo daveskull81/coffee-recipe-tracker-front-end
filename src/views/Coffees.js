@@ -19,6 +19,18 @@ const Coffees = ({ currentUser }) => {
       });
   }, [setCoffees, currentUser.token, currentUser.id, history]);
 
+  const deleteHandler = coffeeId => {
+    apiRequest(currentUser.token)
+      .delete(`/users/${currentUser.id}/coffees/${coffeeId}`)
+      .then(() => {
+        const updatedCoffees = coffees.filter(coffee => coffee.id !== coffeeId);
+        setCoffees(updatedCoffees);
+      })
+      .catch(() => {
+        history.push('/login');
+      });
+  };
+
   if (!coffees) {
     return (
       <>
@@ -57,7 +69,7 @@ const Coffees = ({ currentUser }) => {
                       </CardContent>
                       <CardActions>
                         <Button>Edit</Button>
-                        <Button color="secondary">Delete</Button>
+                        <Button color="secondary" onClick={() => deleteHandler(coffee.id)}>Delete</Button>
                       </CardActions>
                     </Card>
                    </Grid>
