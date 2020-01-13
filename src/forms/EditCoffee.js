@@ -63,6 +63,10 @@ const EditCoffee = ({ currentUser }) => {
             });
     };
 
+    const cancelClickHandler = () => {
+        history.push('/coffees');
+    };
+
     return (
         <>
             <h2>Edit Coffee</h2>
@@ -122,6 +126,7 @@ const EditCoffee = ({ currentUser }) => {
                 >
                 </TextField>
                 <Button color='primary' type='submit'>Update Coffee</Button>
+                <Button color='secondary' onClick={cancelClickHandler}>Cancel</Button>
             </form>
         </>
     );
