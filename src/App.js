@@ -12,6 +12,8 @@ import Methods from './views/Methods';
 import Recipes from './views/Recipes';
 import AddCoffee from './forms/AddCoffee';
 import EditCoffee from './forms/EditCoffee';
+import AddMethod from './forms/AddMethod';
+import EditMethod from './forms/EditMethod';
 
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
               <PrivateRoute exact path='/recipes' component={Recipes} />
               <PrivateRoute path='/coffees/new' component={AddCoffee} />
               <PrivateRoute path='/coffees/edit/:coffeeId' component={EditCoffee} />
+              <PrivateRoute path='/methods/new' component={AddMethod} />
+              <PrivateRoute path='/methods/edit/:methodId' component={EditMethod} />
             </Switch>
         </Router>
       </Container>
