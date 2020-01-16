@@ -19,6 +19,7 @@ This project is used as a portfolio piece for my work as a Software Developer. I
 * Layout and styling with Material UI
 * Frontend testing with React Testing Library
 * Connecting a frontend client to a custom backend database and API
+* Client side storage and management of Authentication data via session cookies
 
 ## Installation
 
@@ -49,4 +50,4 @@ Tests are implemented with React Testing Library. To start tests run `npm test` 
 This project is licensed under the terms of the MIT license. For more details see the [LICENSE](https://github.com/daveskull81/coffee-recipe-tracker-front-end/blob/master/LICENSE) file.
 
 ## Contribution
-This project isn't currently taking contributions, but I am happy to hear feedback. If you have feedback or if there is anything you would like to see changed please open an [issue](https://github.com/daveskull81/coffee-recipe-tracker-front-end/issues).
+This project isn't currently taking contributions, but I am happy to hear feedback. If you have feedback or if there is anything you would like to see changed please open an [issue](https://github.com/daveskull81/coffee-recipe-tracker-front-end/issues). You are welcome to fork this project to work on your own version. Feel free to reach out if you have any questions for me.
