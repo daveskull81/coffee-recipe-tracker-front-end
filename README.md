@@ -19,6 +19,7 @@ This project is used as a portfolio piece for my work as a Software Developer. I
 * Layout and styling with Material UI
 * Frontend testing with React Testing Library
 * Connecting a frontend client to a custom backend database and API
+* Client side storage and management of Authentication data via session cookies
 
 ## Installation
 
