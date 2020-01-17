@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import apiRequest from '../utils/apiRequest';
 import { Grid, Card, CardContent, CardActions, Button } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
+import AppMenuBar from '../components/Layout/AppMenuBar';
 
 const Methods = ({ currentUser }) => {
 
@@ -42,10 +43,8 @@ const Methods = ({ currentUser }) => {
 
   return (
     <>
-      <Grid container justify='space-between' alignItems='center'>
-        <Grid item xs={4}>
-        <h2>All Methods</h2>
-        </Grid>
+      <AppMenuBar headingText='Methods' />
+      <Grid container justify='flex-end' alignItems='center'>
         <Grid item xs={3}>
           <Link to='/methods/new'>
             <Button color='primary'>Add New Method</Button>
