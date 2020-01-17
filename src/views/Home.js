@@ -1,11 +1,12 @@
 import React from 'react';
 import { Grid, Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import AppMenuBar from '../components/Layout/AppMenuBar';
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <AppMenuBar headingText='Home' />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Link to='/coffees'>
