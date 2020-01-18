@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Container, CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 
 import MainPage from './views/MainPage';
 import Home from './views/Home';
@@ -20,7 +20,6 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="sm">
         <Router>
             <Switch>
               <Route exact path='/' component={MainPage} />
@@ -36,7 +35,6 @@ function App() {
               <PrivateRoute path='/methods/edit/:methodId' component={EditMethod} />
             </Switch>
         </Router>
-      </Container>
     </>
   );
 }
