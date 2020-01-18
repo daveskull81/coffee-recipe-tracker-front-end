@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import apiRequest from '../utils/apiRequest';
-import { Grid, Card, CardContent, CardActions, Button } from '@material-ui/core'
+import { Grid, Card, CardContent, CardActions, Button, Container } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 import AppMenuBar from '../components/Layout/AppMenuBar';
 
@@ -44,32 +44,34 @@ const Methods = ({ currentUser }) => {
   return (
     <>
       <AppMenuBar headingText='Methods' />
-      <Grid container justify='flex-end' alignItems='center'>
-        <Grid item xs={3}>
-          <Link to='/methods/new'>
-            <Button color='primary'>Add New Method</Button>
-          </Link>
+      <Container maxWidth='lg'>
+        <Grid container justify='flex-end' alignItems='center'>
+          <Grid item xs={3}>
+            <Link to='/methods/new'>
+              <Button color='primary'>Add New Method</Button>
+            </Link>
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid container spacing={3}>
-        {
-          methods.length === 0 ?
-          <h3>Add methods to get started.</h3>
-          : methods.map(method => {
-            return <Grid item xs={12} key={method.id}>
-                    <Card>
-                      <CardContent>
-                        <p><strong>Name:</strong> {method.name}</p>
-                      </CardContent>
-                      <CardActions>
-                        <Link to={`/methods/edit/${method.id}`}><Button>Edit</Button></Link>
-                        <Button color="secondary" onClick={() => deleteHandler(method.id)}>Delete</Button>
-                      </CardActions>
-                    </Card>
-                   </Grid>
-          })
-        }
-      </Grid>
+        <Grid container spacing={3}>
+          {
+            methods.length === 0 ?
+            <h3>Add methods to get started.</h3>
+            : methods.map(method => {
+              return <Grid item xs={12} key={method.id}>
+                      <Card>
+                        <CardContent>
+                          <p><strong>Name:</strong> {method.name}</p>
+                        </CardContent>
+                        <CardActions>
+                          <Link to={`/methods/edit/${method.id}`}><Button>Edit</Button></Link>
+                          <Button color="secondary" onClick={() => deleteHandler(method.id)}>Delete</Button>
+                        </CardActions>
+                      </Card>
+                    </Grid>
+            })
+          }
+        </Grid>
+      </Container>
     </>
   );
 }
