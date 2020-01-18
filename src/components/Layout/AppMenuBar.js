@@ -27,10 +27,10 @@ const AppMenuBar = ({ headingText }) => {
                     open={Boolean(anchorEl)}
                     onClose={menuCloseHandler}
                 >
-                    <MenuItem onClick={menuCloseHandler}><Link to='/home'>Home</Link></MenuItem>
-                    <MenuItem onClick={menuCloseHandler}><Link to='/coffees'>Coffees</Link></MenuItem>
-                    <MenuItem onClick={menuCloseHandler}><Link to='/methods'>Methods</Link></MenuItem>
-                    <MenuItem onClick={menuCloseHandler}><Link to='/recipes'>Recipes</Link></MenuItem>
+                    <MenuItem onClick={menuCloseHandler} component={Link} to='/home'>Home</MenuItem>
+                    <MenuItem onClick={menuCloseHandler} component={Link} to='/coffees'>Coffees</MenuItem>
+                    <MenuItem onClick={menuCloseHandler} component={Link} to='/methods'>Methods</MenuItem>
+                    <MenuItem onClick={menuCloseHandler} component={Link} to='/recipes'>Recipes</MenuItem>
                 </Menu>
                 <Typography variant='h5'>
                     {headingText}
