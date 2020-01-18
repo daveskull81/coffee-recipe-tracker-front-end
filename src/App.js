@@ -14,6 +14,7 @@ import AddCoffee from './forms/AddCoffee';
 import EditCoffee from './forms/EditCoffee';
 import AddMethod from './forms/AddMethod';
 import EditMethod from './forms/EditMethod';
+import AppMenuBar from './components/Layout/AppMenuBar';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <>
       <CssBaseline />
         <Router>
+            <AppMenuBar />
             <Switch>
               <Route exact path='/' component={MainPage} />
               <Route path='/login' component ={Login} />
