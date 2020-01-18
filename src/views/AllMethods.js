@@ -3,7 +3,7 @@ import apiRequest from '../utils/apiRequest';
 import { Grid, Card, CardContent, CardActions, Button, Container } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 
-const Methods = ({ currentUser }) => {
+const AllMethods = ({ currentUser }) => {
 
   const [methods, setMethods ] = useState(null);
   const history = useHistory();
@@ -73,4 +73,4 @@ const Methods = ({ currentUser }) => {
   );
 }
 
-export default Methods;
+export default AllMethods;
