@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import apiRequest from '../utils/apiRequest';
 import { Grid, Card, CardContent, CardActions, Button, Container } from '@material-ui/core'
 import { Link, useHistory, useParams } from 'react-router-dom';
+import Notes from '../components/Notes/Notes';
 
 const SingleRecipe = ({ currentUser }) => {
   
-  const [recipe, setRecipe ] = useState(
+  const [ recipe, setRecipe ] = useState(
     {
         'name': '',
         'coffee_weight': '',
@@ -22,12 +23,12 @@ const SingleRecipe = ({ currentUser }) => {
         'method_id': ''
       }
   );
-  const [method, setMethod ] = useState(
+  const [ method, setMethod ] = useState(
     {
         "name": ""
     }
   );
-  const [coffee, setCoffee ] = useState(
+  const [ coffee, setCoffee ] = useState(
     {
         'name': '',
         'roaster': '',
@@ -36,6 +37,13 @@ const SingleRecipe = ({ currentUser }) => {
         'processing_method': '',
         'roast_level': ''
       }
+  );
+  const [ notes, setNotes ] = useState(
+    [
+        {
+          'text': ''
+        }
+      ]
   );
   const { recipeId } = useParams();
   const history = useHistory();
@@ -48,6 +56,8 @@ const SingleRecipe = ({ currentUser }) => {
         setMethod(method);
         const { data: coffee } = await apiRequest(currentUser.token).get(`/users/${currentUser.id}/coffees/${recipe.coffee_id}`);
         setCoffee(coffee);
+        const { data: notes } = await apiRequest(currentUser.token).get(`/users/${currentUser.id}/recipes/${recipeId}/notes`);
+        setNotes(notes);
     };
 
     getRecipeData();
@@ -91,6 +101,7 @@ const SingleRecipe = ({ currentUser }) => {
                         <p><strong>Coffee:</strong> {coffee.name}</p>
                         <p><strong>Method:</strong> {method.name}</p>
                         <p><strong>Rating:</strong> {recipe.rating}</p>
+                        <Notes notes={notes} />
                     </CardContent>
                     <CardActions>
                         {/* <Link to={`/recipes/edit/${recipe.id}`}><Button>Edit</Button></Link> */}
