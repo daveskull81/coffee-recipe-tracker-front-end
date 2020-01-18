@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import apiRequest from '../utils/apiRequest';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Container } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
 const AddCoffee = ({ currentUser }) => {
@@ -49,65 +49,66 @@ const AddCoffee = ({ currentUser }) => {
 
     return (
         <>
-            <h2>Add Coffee</h2>
-            <form onSubmit={onSubmitHandler}>
-                <TextField 
-                    margin='normal'
-                    label='Name'
-                    name='name'
-                    onChange={onChangeHandler}
-                    value={coffee.name}
-                    fullWidth
-                >
-                </TextField>
-                <TextField
-                    margin='normal'
-                    required label='Roaster'
-                    name='roaster'
-                    onChange={onChangeHandler}
-                    value={coffee.roaster}
-                    fullWidth
-                >
-                </TextField>
-                <TextField 
-                    margin='normal' 
-                    label='Country of Origin'
-                    name='country_of_origin'
-                    onChange={onChangeHandler}
-                    value={coffee.country_of_origin}
-                    fullWidth
-                >
-                </TextField>
-                <TextField 
-                    margin='normal' 
-                    label='Region'
-                    name='region'
-                    onChange={onChangeHandler}
-                    value={coffee.region}
-                    fullWidth
-                >
-                </TextField>
-                <TextField 
-                    margin='normal' 
-                    label='Processing Method'
-                    name='processing_method'
-                    onChange={onChangeHandler}
-                    value={coffee.processing_method}
-                    fullWidth
-                >
-                </TextField>
-                <TextField 
-                    margin='normal' 
-                    label='Roast Level'
-                    name='roast_level'
-                    onChange={onChangeHandler}
-                    value={coffee.roast_level}
-                    fullWidth
-                >
-                </TextField>
-                <Button color='primary' type='submit'>Add Coffee</Button>
-                <Button color='secondary' onClick={cancelClickHandler}>Cancel</Button>
-            </form>
+            <Container maxWidth='md'>
+                <form onSubmit={onSubmitHandler}>
+                    <TextField 
+                        margin='normal'
+                        label='Name'
+                        name='name'
+                        onChange={onChangeHandler}
+                        value={coffee.name}
+                        fullWidth
+                    >
+                    </TextField>
+                    <TextField
+                        margin='normal'
+                        required label='Roaster'
+                        name='roaster'
+                        onChange={onChangeHandler}
+                        value={coffee.roaster}
+                        fullWidth
+                    >
+                    </TextField>
+                    <TextField 
+                        margin='normal' 
+                        label='Country of Origin'
+                        name='country_of_origin'
+                        onChange={onChangeHandler}
+                        value={coffee.country_of_origin}
+                        fullWidth
+                    >
+                    </TextField>
+                    <TextField 
+                        margin='normal' 
+                        label='Region'
+                        name='region'
+                        onChange={onChangeHandler}
+                        value={coffee.region}
+                        fullWidth
+                    >
+                    </TextField>
+                    <TextField 
+                        margin='normal' 
+                        label='Processing Method'
+                        name='processing_method'
+                        onChange={onChangeHandler}
+                        value={coffee.processing_method}
+                        fullWidth
+                    >
+                    </TextField>
+                    <TextField 
+                        margin='normal' 
+                        label='Roast Level'
+                        name='roast_level'
+                        onChange={onChangeHandler}
+                        value={coffee.roast_level}
+                        fullWidth
+                    >
+                    </TextField>
+                    <Button color='primary' type='submit'>Add Coffee</Button>
+                    <Button color='secondary' onClick={cancelClickHandler}>Cancel</Button>
+                </form>
+            </Container>
         </>
     );
 };
