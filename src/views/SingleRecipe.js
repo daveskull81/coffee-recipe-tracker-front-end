@@ -105,7 +105,7 @@ const SingleRecipe = ({ currentUser }) => {
                     </CardContent>
                     <CardActions>
                         {/* <Link to={`/recipes/edit/${recipe.id}`}><Button>Edit</Button></Link> */}
-                        <Button color="secondary" onClick={deleteHandler}>Delete</Button>
+                        <Button color="secondary" onClick={deleteHandler}>Delete Recipe</Button>
                     </CardActions>
                 </Card>
             </Grid>
