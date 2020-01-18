@@ -7,13 +7,15 @@ import Home from './views/Home';
 import Login from './views/Login';
 import Register from './views/Register';
 import PrivateRoute from './components/Auth/PrivateRoute';
-import Coffees from './views/Coffees';
-import Methods from './views/Methods';
-import Recipes from './views/Recipes';
+import AllCoffees from './views/AllCoffees';
+import AllMethods from './views/AllMethods';
+import AllRecipes from './views/AllRecipes';
 import AddCoffee from './forms/AddCoffee';
 import EditCoffee from './forms/EditCoffee';
 import AddMethod from './forms/AddMethod';
 import EditMethod from './forms/EditMethod';
+import SingleRecipe from './views/SingleRecipe';
+import AppMenuBar from './components/Layout/AppMenuBar';
 
 function App() {
 
@@ -21,18 +23,20 @@ function App() {
     <>
       <CssBaseline />
         <Router>
+            <AppMenuBar />
             <Switch>
               <Route exact path='/' component={MainPage} />
               <Route path='/login' component ={Login} />
               <Route path='/register' component={Register} />
               <PrivateRoute path='/home' component={Home} />
-              <PrivateRoute exact path='/coffees' component={Coffees} />
-              <PrivateRoute exact path='/methods' component={Methods} />
-              <PrivateRoute exact path='/recipes' component={Recipes} />
+              <PrivateRoute exact path='/coffees' component={AllCoffees} />
+              <PrivateRoute exact path='/methods' component={AllMethods} />
+              <PrivateRoute exact path='/recipes' component={AllRecipes} />
               <PrivateRoute path='/coffees/new' component={AddCoffee} />
               <PrivateRoute path='/coffees/edit/:coffeeId' component={EditCoffee} />
               <PrivateRoute path='/methods/new' component={AddMethod} />
               <PrivateRoute path='/methods/edit/:methodId' component={EditMethod} />
+              <PrivateRoute path='/recipes/:recipeId' component={SingleRecipe} />
             </Switch>
         </Router>
     </>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import apiRequest from '../utils/apiRequest';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Container } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
 const AddMethod = ({ currentUser }) => {
@@ -39,20 +39,21 @@ const AddMethod = ({ currentUser }) => {
 
     return (
         <>
-            <h2>Add Method</h2>
-            <form onSubmit={onSubmitHandler}>
-                <TextField 
-                    margin='normal'
-                    label='Name'
-                    name='name'
-                    onChange={onChangeHandler}
-                    value={method.name}
-                    fullWidth
-                >
-                </TextField>
-                <Button color='primary' type='submit'>Add Method</Button>
-                <Button color='secondary' onClick={cancelClickHandler}>Cancel</Button>
-            </form>
+            <Container maxWidth='md'>
+                <form onSubmit={onSubmitHandler}>
+                    <TextField 
+                        margin='normal'
+                        label='Name'
+                        name='name'
+                        onChange={onChangeHandler}
+                        value={method.name}
+                        fullWidth
+                    >
+                    </TextField>
+                    <Button color='primary' type='submit'>Add Method</Button>
+                    <Button color='secondary' onClick={cancelClickHandler}>Cancel</Button>
+                </form>
+            </Container>
         </>
     );
 };

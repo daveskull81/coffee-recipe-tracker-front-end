@@ -33,7 +33,7 @@ const AppMenuBar = ({ headingText }) => {
                     <MenuItem onClick={menuCloseHandler} component={Link} to='/recipes'>Recipes</MenuItem>
                 </Menu>
                 <Typography variant='h5'>
-                    {headingText}
+                    Coffee Recipe Tracker
                 </Typography>
                 <LogoutButton />
             </Toolbar>

@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Notes = () => {
+const Notes = ({ notes }) => {
   return (
-    <div>
-      <h2>All Notes</h2>
-    </div>
+    <>
+      -----
+      <h3>Notes:</h3>
+      {notes.map(note => <p>{note.text}</p>)}
+    </>
   );
 }
 
