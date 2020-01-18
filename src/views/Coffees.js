@@ -34,8 +34,7 @@ const Coffees = ({ currentUser }) => {
   if (!coffees) {
     return (
       <>
-        <h1>All Coffees</h1>
-        <h2>...Loading</h2>
+        <h2>...Loading Coffees</h2>
       </>
     );
   }

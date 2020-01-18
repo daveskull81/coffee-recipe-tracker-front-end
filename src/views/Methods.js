@@ -34,8 +34,7 @@ const Methods = ({ currentUser }) => {
   if (!methods) {
     return (
       <>
-        <h1>All Methods</h1>
-        <h2>...Loading</h2>
+        <h2>...Loading Methods</h2>
       </>
     );
   }
