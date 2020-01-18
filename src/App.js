@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="sm">
+      <Container maxWidth='xl'>
         <Router>
             <Switch>
               <Route exact path='/' component={MainPage} />
