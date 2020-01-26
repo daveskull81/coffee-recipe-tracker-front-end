@@ -5,7 +5,7 @@ const Notes = ({ notes }) => {
     <>
       -----
       <h3>Notes:</h3>
-      {notes.map(note => <p>{note.text}</p>)}
+      {notes.map(note => <p key={note.id}>{note.text}</p>)}
     </>
   );
 }

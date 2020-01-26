@@ -1,12 +1,16 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const LoginButton = () => {
+    const history = useHistory();
+
+    const clickHandler = () => {
+        history.push('/login');
+    };
+
     return (
-        <Link to='/login'>
-            <Button color='primary'>Login</Button>
-        </Link>
+        <Button color='inherit' onClick={clickHandler}>Login</Button>
     );
 };
 

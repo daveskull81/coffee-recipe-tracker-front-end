@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import LogoutButton from './LogoutButton';
+import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const AppMenuBar = ({ headingText }) => {
 
     const [ anchorEl, setAnchorEl ] = useState(null);
+    const [ cookies ] = useCookies([process.env.REACT_APP_USER_COOKIE_NAME]);
 
     const menuClickHandler = e => {
         setAnchorEl(e.currentTarget);
@@ -35,7 +38,9 @@ const AppMenuBar = ({ headingText }) => {
                 <Typography variant='h5'>
                     Coffee Recipe Tracker
                 </Typography>
-                <LogoutButton />
+                { Object.keys(cookies).length === 0 && cookies.constructor === Object ?
+                 <LoginButton /> : <LogoutButton />
+                }
             </Toolbar>
         </AppBar>
     );
