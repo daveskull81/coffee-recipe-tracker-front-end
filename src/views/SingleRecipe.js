@@ -85,6 +85,13 @@ const SingleRecipe = ({ currentUser }) => {
   return (
     <>
       <Container maxWidth='lg'>
+      <Grid container justify='flex-start' alignItems='center'>
+          <Grid item xs={3}>
+            <Link to='/recipes'>
+              <Button color='primary'>Back</Button>
+            </Link>
+          </Grid>
+        </Grid>
         <Grid container spacing={3}>
             <Grid item xs={12} key={recipe.id}>
                 <Card>
@@ -104,7 +111,7 @@ const SingleRecipe = ({ currentUser }) => {
                         <Notes notes={notes} />
                     </CardContent>
                     <CardActions>
-                        {/* <Link to={`/recipes/edit/${recipe.id}`}><Button>Edit</Button></Link> */}
+                        <Link to={`/recipes/edit/${recipe.id}`}><Button>Edit</Button></Link>
                         <Button color="secondary" onClick={deleteHandler}>Delete Recipe</Button>
                     </CardActions>
                 </Card>
