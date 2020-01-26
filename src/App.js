@@ -16,6 +16,7 @@ import AddMethod from './forms/AddMethod';
 import EditMethod from './forms/EditMethod';
 import SingleRecipe from './views/SingleRecipe';
 import AddRecipe from './forms/AddRecipe';
+import EditRecipe from './forms/EditRecipe';
 import AppMenuBar from './components/Layout/AppMenuBar';
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
               <PrivateRoute path='/methods/new' component={AddMethod} />
               <PrivateRoute path='/methods/edit/:methodId' component={EditMethod} />
               <PrivateRoute path='/recipes/new' component={AddRecipe} />
-              <PrivateRoute path='/recipes/:recipeId' component={SingleRecipe} />
+              <PrivateRoute exact path='/recipes/:recipeId' component={SingleRecipe} />
+              <PrivateRoute exact path='/recipes/edit/:recipeId' component={EditRecipe} />
             </Switch>
         </Router>
     </>
